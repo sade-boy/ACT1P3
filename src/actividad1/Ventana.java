@@ -29,6 +29,13 @@ public class Ventana extends JFrame{
 				this.setMinimumSize(new Dimension(500,500));
 				this.setMaximumSize(new Dimension(850,500));
 				this.setTitle("Inicio Sesion");
+				
+			
+				
+				ImageIcon iconoVentana = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
+				Image iconoApp = iconoVentana.getImage();
+				this.setIconImage(iconoApp);
+
 				this.setLayout(null);
 				
 			
