@@ -1,8 +1,11 @@
 package actividad1;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 
 import javax.swing.ButtonGroup;
@@ -29,10 +32,50 @@ public class Ventana extends JFrame{
 				this.setMinimumSize(new Dimension(500,500));
 				this.setMaximumSize(new Dimension(850,500));
 				this.setTitle("Inicio Sesion");
+				this.pintar();
+	}
 				
+	public void pintar()
+	{
+		 
+			JPanel pane = new JPanel() {
+	            @Override
+	            protected void paintComponent(Graphics g) {
+	                super.paintComponent(g);
+	                Graphics2D g2d = (Graphics2D) g;
+	                
+	                g2d.setStroke(new  BasicStroke(3));
+	              
+	                g2d.drawRect(250,250,100,100);  
+	                g2d.drawOval(275,275,50,50);                
+	                g2d.drawOval(290,290,20,20);
+	                g2d.drawArc(250, 250, 100, 100, 0, 170);
+	                
+	                g2d.drawRect(350,250,100,100);
+	                g2d.drawOval(375,275,50,50);
+	                g2d.drawArc(350, 250, 100, 100, 0, 170);
+	                g2d.drawOval(390,290,20,20);
+	                
+	                g2d.drawArc(290, 380, 100, 100, 0, 170);
+	                g2d.drawPolygon(new int[] {200,100,300}, new int[] {100,300,50},3);
+	 
+	                g2d.setColor(Color.red);
+	                g2d.fillOval(320, 320, 50, 50);
+	                
+	            
+	            }
+	        };
+	        
+	        pane.setSize(1200,700);
+            pane.setLocation(0,0);
+            this.add(pane);
+            
+		}
+	
 			
 				
-				ImageIcon iconoVentana = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
+			
+				/*ImageIcon iconoVentana = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
 				Image iconoApp = iconoVentana.getImage();
 				this.setIconImage(iconoApp);
 
@@ -87,7 +130,7 @@ public class Ventana extends JFrame{
 				
 				ImageIcon iconoPlane = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
 				Image img3 = iconoPlane.getImage();
-				Image imgEscalada3 = img3.getScaledInstance(120,120,Image.SCALE_SMOOTH);
+				Image imgEscalada3 = img3.getScaledInstance(20,20,Image.SCALE_SMOOTH);
 				ImageIcon iconoFinal3 = new ImageIcon(imgEscalada3);
 
 				JLabel etiquetaImagen3 = new JLabel(iconoFinal3);
@@ -220,10 +263,10 @@ public class Ventana extends JFrame{
 				
 
 				register_conteiner.repaint();
-				register_conteiner.revalidate();
+				register_conteiner.revalidate();*/
 				
 				
 	}
-}
+
 	 
 
