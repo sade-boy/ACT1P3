@@ -7,7 +7,10 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,102 +25,19 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
 public class Ventana extends JFrame{
-
 	public Ventana() {
 				
 				this.setVisible(true);
-				this.setSize(500,500);
+				this.setSize(800,500);
 				this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				this.setLocationRelativeTo(null);
 				this.setMinimumSize(new Dimension(500,500));
-				this.setMaximumSize(new Dimension(500,500));
+				this.setMaximumSize(new Dimension(800,500));
 				this.setTitle("Inicio Sesion");
-				this.pintar();
-	}
+				this.setLayout(null);
 				
-	public void pintar()
-	{
-		 
-			JPanel pane = new JPanel() {
-	            @Override
-	            protected void paintComponent(Graphics g) {
-	                super.paintComponent(g);
-	                Graphics2D g2d = (Graphics2D) g;
-	                
-	                g2d.setStroke(new  BasicStroke(3));
-	              
-	                g2d.setColor(new Color(135,206,235));
-			        g2d.fillRect(0,0,500,500);
-
-			       
-			        g2d.setColor(Color.yellow);
-			        g2d.fillOval(30,30,60,60);
-
-			        
-			        g2d.setColor(new Color(80,170,80));
-			        g2d.fillRect(0,380,500,120);
-
-			     
-			        g2d.setColor(new Color(240,210,150));
-			        g2d.fillRect(150,230,200,150);
-
-			    
-			        g2d.setColor(new Color(180,60,60));
-			        g2d.fillPolygon(new int[]{140,250,360}, new int[]{230,160,230},3);
-
-			       
-			        g2d.setColor(Color.gray);
-			        g2d.fillRect(170,250,50,50);
-
-			        g2d.setColor(new Color(120,70,40));
-			        g2d.drawLine(195,250,195,300);
-			        g2d.drawLine(170,275,220,275);
-
-			       
-			        g2d.setColor(Color.gray);
-			        g2d.fillRect(280,250,50,50);
-			        
-			        g2d.setColor(new Color(120,70,40));
-			        g2d.drawLine(305,250,305,300);
-			        g2d.drawLine(280,275,330,275);
-
-			    
-			        g2d.setColor(new Color(150,90,60));
-			        g2d.fillRect(230,290,40,90);
-
-
-			        g2d.setColor(Color.white);
-			        g2d.fillOval(260,320,8,8);
-
-			        
-			        g2d.setColor(Color.orange);
-			        g2d.fillRect(20,340,12,50);
-			        g2d.fillRect(60,340,12,50);
-			        g2d.fillRect(100,340,12,50);
-			        g2d.fillRect(140,340,12,50);
-			        g2d.fillRect(180,340,12,50);
-			        g2d.fillRect(220,340,12,50);
-			        g2d.fillRect(260,340,12,50);
-			        g2d.fillRect(300,340,12,50);
-			        g2d.fillRect(340,340,12,50);
-			        g2d.fillRect(380,340,12,50);
-			        g2d.fillRect(420,340,12,50);
-			        g2d.fillRect(460,340,12,50);
-	                
-	            
-	            }
-	        };
-	        
-	        pane.setSize(1200,700);
-            pane.setLocation(0,0);
-            this.add(pane);
-            
-		}
-	
-			
 				
-			
-				/*ImageIcon iconoVentana = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
+				ImageIcon iconoVentana = new ImageIcon("D:/Santiago/ACT1P3/planeLogo.png");
 				Image iconoApp = iconoVentana.getImage();
 				this.setIconImage(iconoApp);
 
@@ -302,10 +222,42 @@ public class Ventana extends JFrame{
 				acceder.setHorizontalAlignment(JLabel.LEFT);
 				register_conteiner.add(acceder);
 				
+				acceder.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						
+						String username_val = username.getText();
+						if(username_val.equals("")) {
+							username.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
+						}else {
+							username.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
+						}
+						
+						
+						String password_val = contraseña.getText();
+						
+						
+						if(password_val.equals("")) {
+							contraseña.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
+						}else {
+							contraseña.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
+						}
+						
+						
+						
+						
+					}
+			
+				});
+				
 				
 
 				register_conteiner.repaint();
-				register_conteiner.revalidate();*/
+				register_conteiner.revalidate();
+				
+		}
 				
 				
 	}
