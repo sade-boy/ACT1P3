@@ -30,90 +30,89 @@ public class Ventana extends JFrame{
 				this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				this.setLocationRelativeTo(null);
 				this.setMinimumSize(new Dimension(500,500));
-				this.setMaximumSize(new Dimension(830,500));
+				this.setMaximumSize(new Dimension(500,500));
 				this.setTitle("Inicio Sesion");
 				this.pintar();
 	}
 				
 	public void pintar()
 	{
-	 
-		JPanel pane = new JPanel() { 
-		    @Override
-		    protected void paintComponent(Graphics g) {
-		        super.paintComponent(g);
-		        Graphics2D g2d = (Graphics2D) g;
-		        
-		        g2d.setStroke(new BasicStroke(3));
+		 
+			JPanel pane = new JPanel() {
+	            @Override
+	            protected void paintComponent(Graphics g) {
+	                super.paintComponent(g);
+	                Graphics2D g2d = (Graphics2D) g;
+	                
+	                g2d.setStroke(new  BasicStroke(3));
+	              
+	                g2d.setColor(new Color(135,206,235));
+			        g2d.fillRect(0,0,500,500);
 
-		       
-		        g2d.setColor(new Color(135,206,235));
-		        g2d.fillRect(0,0,500,500);
+			       
+			        g2d.setColor(Color.yellow);
+			        g2d.fillOval(30,30,60,60);
 
-		       
-		        g2d.setColor(Color.yellow);
-		        g2d.fillOval(30,30,60,60);
+			        
+			        g2d.setColor(new Color(80,170,80));
+			        g2d.fillRect(0,380,500,120);
 
-		        
-		        g2d.setColor(new Color(80,170,80));
-		        g2d.fillRect(0,380,500,120);
+			     
+			        g2d.setColor(new Color(240,210,150));
+			        g2d.fillRect(150,230,200,150);
 
-		     
-		        g2d.setColor(new Color(240,210,150));
-		        g2d.fillRect(150,230,200,150);
+			    
+			        g2d.setColor(new Color(180,60,60));
+			        g2d.fillPolygon(new int[]{140,250,360}, new int[]{230,160,230},3);
 
-		    
-		        g2d.setColor(new Color(180,60,60));
-		        g2d.fillPolygon(new int[]{140,250,360}, new int[]{230,160,230},3);
+			       
+			        g2d.setColor(Color.gray);
+			        g2d.fillRect(170,250,50,50);
 
-		       
-		        g2d.setColor(Color.gray);
-		        g2d.fillRect(170,250,50,50);
+			        g2d.setColor(new Color(120,70,40));
+			        g2d.drawLine(195,250,195,300);
+			        g2d.drawLine(170,275,220,275);
 
-		        g2d.setColor(new Color(120,70,40));
-		        g2d.drawLine(195,250,195,300);
-		        g2d.drawLine(170,275,220,275);
+			       
+			        g2d.setColor(Color.gray);
+			        g2d.fillRect(280,250,50,50);
+			        
+			        g2d.setColor(new Color(120,70,40));
+			        g2d.drawLine(305,250,305,300);
+			        g2d.drawLine(280,275,330,275);
 
-		       
-		        g2d.setColor(Color.gray);
-		        g2d.fillRect(280,250,50,50);
-		        
-		        g2d.setColor(new Color(120,70,40));
-		        g2d.drawLine(305,250,305,300);
-		        g2d.drawLine(280,275,330,275);
-
-		    
-		        g2d.setColor(new Color(150,90,60));
-		        g2d.fillRect(230,290,40,90);
+			    
+			        g2d.setColor(new Color(150,90,60));
+			        g2d.fillRect(230,290,40,90);
 
 
-		        g2d.setColor(Color.white);
-		        g2d.fillOval(260,320,8,8);
+			        g2d.setColor(Color.white);
+			        g2d.fillOval(260,320,8,8);
 
-		        
-		        g2d.setColor(Color.orange);
-		        g2d.fillRect(20,340,12,50);
-		        g2d.fillRect(60,340,12,50);
-		        g2d.fillRect(100,340,12,50);
-		        g2d.fillRect(140,340,12,50);
-		        g2d.fillRect(180,340,12,50);
-		        g2d.fillRect(220,340,12,50);
-		        g2d.fillRect(260,340,12,50);
-		        g2d.fillRect(300,340,12,50);
-		        g2d.fillRect(340,340,12,50);
-		        g2d.fillRect(380,340,12,50);
-		        g2d.fillRect(420,340,12,50);
-		        g2d.fillRect(460,340,12,50);
-		    }
-		};
-
-		pane.setSize(500,500);
-		pane.setLocation(0,0);
-		this.add(pane);
-		pane.setSize(1200,700);
-		pane.setLocation(0,0);
-		this.add(pane);
-	}
+			        
+			        g2d.setColor(Color.orange);
+			        g2d.fillRect(20,340,12,50);
+			        g2d.fillRect(60,340,12,50);
+			        g2d.fillRect(100,340,12,50);
+			        g2d.fillRect(140,340,12,50);
+			        g2d.fillRect(180,340,12,50);
+			        g2d.fillRect(220,340,12,50);
+			        g2d.fillRect(260,340,12,50);
+			        g2d.fillRect(300,340,12,50);
+			        g2d.fillRect(340,340,12,50);
+			        g2d.fillRect(380,340,12,50);
+			        g2d.fillRect(420,340,12,50);
+			        g2d.fillRect(460,340,12,50);
+	                
+	            
+	            }
+	        };
+	        
+	        pane.setSize(1200,700);
+            pane.setLocation(0,0);
+            this.add(pane);
+            
+		}
 	
 			
 				
