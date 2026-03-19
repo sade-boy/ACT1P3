@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
@@ -224,34 +225,45 @@ public class Ventana extends JFrame{
 				
 				acceder.addActionListener(new ActionListener() {
 
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						
-						String username_val = username.getText();
-						if(username_val.equals("")) {
-							username.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
-						}else {
-							username.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
-						}
-						
-						
-						String password_val = contraseña.getText();
-						
-						
-						if(password_val.equals("")) {
-							contraseña.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
-						}else {
-							contraseña.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
-						}
-						
-						
-						
-						
-					}
-			
+				    @Override
+				    public void actionPerformed(ActionEvent e) {
+				        
+				        String username_val = username.getText();
+				        String password_val = new String(contraseña.getPassword());
+
+				        boolean usuarioValido = true;
+				        boolean passwordValido = true;
+
+				        
+				        if(username_val.equals("")) {
+				            username.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
+				            usuarioValido = false;
+				        } else {
+				            username.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
+				        }
+
+				        
+				        if(password_val.equals("")) {
+				            contraseña.setBorder(BorderFactory.createLineBorder(Color.red,3,true));
+				            passwordValido = false;
+				        } else {
+				            contraseña.setBorder(BorderFactory.createLineBorder(Color.green,3,true));
+				        }
+
+				      
+				        if(usuarioValido && passwordValido) {
+				        		JOptionPane.showMessageDialog(null, 
+				                "Inicio de sesión exitoso", 
+				                "Éxito", 
+				                JOptionPane.INFORMATION_MESSAGE);
+				        } else {
+				            JOptionPane.showMessageDialog(null, 
+				                "Por favor completa todos los campos", 
+				                "Error", 
+				                javax.swing.JOptionPane.WARNING_MESSAGE);
+				        }
+				    }
 				});
-				
 				
 
 				register_conteiner.repaint();
