@@ -5,7 +5,7 @@ public class Actividad1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Ventana miventana = new Ventana();
+		Ventana miVentana = new Ventana();
 	}
 
 }
